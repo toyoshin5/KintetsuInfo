@@ -1,0 +1,27 @@
+{
+  "Mac" : [
+    {
+      "name" : "Ji",
+      "hash" : "dc596580bb2735cb5cd748a3536b1b2340bd0f02c3adfe3beb53081a325e2a51"
+    }
+  ],
+  "watchOS" : [
+    {
+      "name" : "Ji",
+      "hash" : "e5e875af3b4d20514af815f9cbe80e4b77ff1777fd27bdccccb657dee72dc8dd"
+    }
+  ],
+  "tvOS" : [
+    {
+      "name" : "Ji",
+      "hash" : "a3b123c4723e1a946fc339f0cace6c480db6955a6846c9b756cfeb67b1bcca48"
+    }
+  ],
+  "commitish" : "2.1.0",
+  "iOS" : [
+    {
+      "name" : "Ji",
+      "hash" : "5dadcc0933f3d79ecfce93a13ec6573dc3b935a7b3a77f99f764826eefaddb3c"
+    }
+  ]
+}

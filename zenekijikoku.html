@@ -1,0 +1,1536 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;CHARSET=utf-8">
+	<title>近畿日本鉄道｜時刻表</title>
+	<meta name="viewport" content="width=640, initial-scale=0.5, maximum-scale=2, user-scalable =yes">
+	
+
+
+
+		<style type="text/css">
+			<!--
+				#hightlevel    { width: 90%; margin: 0 auto;   }
+				#hightlevel .t { color:blue; font-weight:bold; }
+				#hightlevel .h1{ color:blue; font-weight:bold; }
+			// -->
+		</style>
+		<noscript>
+			<div id="hightlevel" >
+				<pre>
+
+
+
+		<div class="t">
+			近畿日本鉄道ホームページはJavaScriptを使用しています。
+			お使いのブラウザでは、JavaScript設定が無効になっているためご覧いただけません。
+			恐れ入りますが、ブラウザのセキュリティ設定でJavaScriptを有効に設定してからご利用くださるようお願いいたします。
+			設定変更の方法は、下記をご覧ください。
+
+			<hr size="1" color="#333333" >
+
+		</div>
+
+		<span class="h1">■Internet Explorerの設定方法</span>
+
+			(1) Internet Explorerのメニューバーで[ツール]をクリックします。
+			(2) 表示されるメニューから、[インターネットオプション]をクリックします。
+			　↓
+			(3) [セキュリティ]をクリックします。
+			　↓
+			(4) AまたはBの方法で、セキュリティレベルの変更を行います。
+
+			　A：[インターネット]（地球マーク）を選択後、[既定のレベル]ボタンを押します。
+			　　セキュリティレベルが「中高」に変更になります。
+			※ボタンが押せない場合はすでに[既定のレベル]が選択されています。
+
+			　B：[レベルのカスタマイズ]ボタンを押し、「セキュリティの設定 -インターネットゾーン」を表示。
+			　　「スクリプト」項目の[Javaアプレットのスクリプト][アクティブスクリプト][スクリプトによる貼り付け処理の許可]
+			　　の設定で、それぞれ[有効にする]を選択します。
+			　　[OK]を押すと、[このゾーンの設定を変更しますか？]という警告が表示されるので、[はい]を押します。
+			　↓
+			(5) [インターネットオプション]の、[OK]ボタンを押します。
+
+
+			<span class="h1">■Safariの設定方法</span>
+			(1) メニューの[Safari]をクリックし、[環境設定]を選択します。
+			(2) 表示されるウインドウで[セキュリティ]をクリックします。
+			　↓
+			(3) [プラグインを有効にする]と[JavaScriptを有効にする]にチェックを入れます。
+			　↓
+			(4) 「セキュリティ」ウインドウを閉じます。
+
+
+			<span class="h1">■Chromeの設定方法</span>
+			(1) メニューの[レンチマーク]をクリックし、[オプション]を選択します。
+			(2) 表示されるウインドウで[高度な設定]をクリック。
+			　↓
+			(3) プライバシー項目の[コンテンツ設定]ボタンを押します。
+			　↓
+			(4) JavaScriptの[すべてのサイトでJavascriptの実行（推奨）]にチェックを入れます。
+			　↓
+			(5) 「オプション」ウインドウを閉じます。
+
+		
+
+				</pre>
+			</div>
+		</noscript>
+	<link rel="stylesheet" type="text/css" media="all" href="/common/css/railway_main_top.css">
+	<link rel="stylesheet" type="text/css" media="all" href="/common/css/railway_main_sp.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./css/zenekijikoku.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./css/zenekijikoku_sp.css">
+	<style type="text/css">
+		#mongonAdd{
+			margin-bottom : 10px;
+			text-align    : left;
+			color         : #000000;
+		}
+		table.route {
+			table-layout    : auto;
+			border-collapse : collapse;
+			width           : 740px;
+			margin          : 0 auto 0;
+		}
+		#tetsudo_menu_sp table.route {
+			width           : 612px;
+		}
+		table.route td {
+			width           : 25%;
+			border          : 1px solid #b2b2b2;
+			padding         : 0px 4px;
+			font-size       : 12px;
+			line-height     : 0;
+			vertical-align  : middle;
+		}
+		table.route td a {
+			border          : none;
+			color           : #00E;
+			text-decoration : none;
+			font-family     : "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック","Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+			vertical-align  : middle;
+		}
+		table.route td a img{
+			margin-right    : 10px;
+			vertical-align  : middle;
+		}
+		#tbl_route td{
+			width : 160px;
+			height : 25px;
+			vertical-align : middle;
+			white-space: nowrap;
+		}
+
+		#anc_goannai{
+			margin: 20px auto 5px 0px;
+			background: linear-gradient(to bottom, #0073bd, #0054ab);
+			color: white;
+			padding: 5px 0 3px 10px;
+			font-size: 14px;
+			-webkit-border-radius: 5 5 0 0;
+			-moz-border-radius: 5 5 0 0;
+			border-radius: 5px 5px 0 0;
+			text-shadow: 1px 1px 0px #000;
+		}
+
+		#btn_anc_goannnai{
+			border-radius: 3px;
+			color: #ffffff;
+			font-size: 13px;
+			padding: 5px 10px;
+			text-decoration: none;
+			background: #d49219;
+			border: 1px solid #996c0d;
+			transition: all 150ms 0s ease;
+		}
+		#btn_anc_goannnai:hover{
+			background: #ea6a3e;
+
+		}
+
+	</style>
+	<script type="text/javascript" src="/common/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/common/js/WebKitDetect.js"></script>
+	<script type="text/javascript" src="/common/js/niceforms.js"></script>
+	<script type="text/javascript" src="/common/js/pm.js"></script>
+	<script type="text/javascript" src="/common/js/pm_link.js"></script>
+
+<script type="text/javascript"> function checkSP_php(){ isMobile = false; } </script>
+	<script type="text/javascript">
+		checkSP();
+		checkSP_php();
+	</script>
+</head>
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-PT9RQF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PT9RQF');</script>
+<!-- End Google Tag Manager -->
+
+	<div id="wrapper">
+		<div id="outline_frame">
+
+<!--header-->
+
+			<div id="header">
+				<form method="post" action="https://www.ticket.kintetsu.co.jp/M/MZZ/MZZ10.do?op=pExecuteLogin" name="reservation" target="_blank" onSubmit="return false;" Accept-charset="shift_jis">
+					<input type="hidden" name="pi100" value="">
+					<input type="hidden" name="pi101" value="">
+					<input type="hidden" name="ps123" value="1">
+				</form>
+				<div id="logo"><h1><a href="http://www.kintetsu.co.jp/">近畿日本鉄道</a></h1></div>
+				<div id="language">
+					<ul>
+						<li id="en" ><a href="javascript:void(0)" onclick="javascript:goHeaderPage( 5,1)">English</a></li>
+						<li id="ch1"><a href="javascript:void(0)" onclick="javascript:goHeaderPage( 6,1)">中文(簡体字)</a></li>
+						<li id="ch2"><a href="javascript:void(0)" onclick="javascript:goHeaderPage( 7,1)">中文(繁体字)</a></li>
+						<li id="ko" ><a href="javascript:void(0)" onclick="javascript:goHeaderPage( 8,1)">韓国語</a></li>
+						<li id="th" ><a href="javascript:void(0)" onclick="javascript:goHeaderPage(13,1)">タイ語</a></li>
+					</ul>
+				</div>
+				<div id="chara_size">
+					<ul>
+						<li id="chara_t"><div class="block">文字サイズ</div></li>
+						<li id="small"  ><a><div class="block2">小</div></a></li>
+						<li id="middle" ><a><div class="block2">中</div></a></li>
+						<li id="large"  ><a><div class="block2">大</div></a></li>
+					</ul>
+				</div>
+				<div id="reauest">
+					<ul>
+						<li id="req_1"><a href="javascript:void(0)" onclick="javascript:goHeaderPage( 9,1)">よくあるご質問</a></li>
+						<li id="req_2"><a href="javascript:void(0)" onclick="javascript:goHeaderPage(10,1)">お問い合わせ</a></li>
+						<li id="req_3"><a href="javascript:void(0)" onclick="javascript:goHeaderPage(11,1)">ご意見・ご要望</a></li>
+						<li id="req_4"><a href="javascript:void(0)" onclick="javascript:goHeaderPage(12,1)">お忘れ物について</a></li>
+					</ul>
+				</div>
+				<div id="isearchForm">
+<form action="https://search.kintetsu.jp/" name="search_form" method="GET" onsubmit="return mysearch(this);">
+    <input type="text" name="kw" value="" id="search-number" class="iSearchAssist">
+    <input type="hidden" name="ie" value="u">
+    <input type="hidden" name="site" value="kintetsu">
+    <input type="submit" id="search_button" value=" " >
+</form>
+</div>
+				<div id="menu_btn">
+					<ul>
+						<li id="menu_1"><a href="javascript:void(0)" onclick="javascript:goHeaderPage( 0,1)">近鉄電車ご利用案内</a></li>
+						<li id="menu_2"><a href="javascript:void(0)" onclick="javascript:goHeaderPage( 1,1)">観光・おでかけ</a></li>
+						<li id="menu_3"><a href="javascript:void(0)" onclick="javascript:goHeaderPage( 2,1)">ショッピング・くらし</a></li>
+						<li id="menu_5"><a href="javascript:void(0)" onclick="javascript:goHeaderPage( 4,1)">企業・採用</a></li>
+					</ul>
+				</div>
+				<div id="menu_line"></div>
+					<!--Dyer form-->
+					<div id="f_frame">
+						<div id="f_frame_in">
+						<!--20181001.HTTPS化下記一行コメントアウト-->
+						<!--<iframe id='pm_fr' src='../toppage/dyer.html' width='302' height='280' scrolling='no' frameborder='0'></iframe>-->
+							<div id="sorry" style="margin: -40px 15px 0px 15px; color: #ee0000;">【お知らせ】<br>なばなの里イルミネーションに伴う、急行列車の近鉄長島駅臨時停車のご案内は<a href="/railway/Dia/dia_nabana_20180914.html">こちら</a>をご覧ください。</div>
+							<div id="close_btn"><a href="javascript:void(0)" onclick="javascript:closeDyerWindow()">閉じる</a></div>
+						</div>
+					</div></div><!--side menu for smart phone-->
+
+			<div id="bread"><a href="/index.html">ホーム</a> &gt; <a href="./index.html">近鉄電車ご利用案内</a> &gt; 時刻表</div>
+			<div id="contents_frame" class="clear">
+				<div id="main_frame">
+
+
+					<div id="tetsudo_menu_pc">
+						<p class="title"><img src="./image/zenekijikoku/title_2.jpg" alt="全駅時刻表"></p>
+						<p id="mongonAdd">
+							【お知らせ】<br>
+							臨時列車等のご案内については<a href="/railway/Dia/A10001.html">こちら</a>をご覧ください。<br>
+							<span style = "color:#ff0000;">
+								なばなの里イルミネーションに伴う、急行列車の近鉄長島駅臨時停車のご案内は<a href="/railway/Dia/dia_nabana_20180914.html">こちら</a>をご覧ください。
+							</span>
+						</p>
+
+<!--<script type="text/javascript" src="./jquery-1.11.3.min.js"   ></script>-->
+<!--<script type="text/javascript" src="./jquery-ui.min.js"       ></script>-->
+	<script type="text/javascript" src="./jquery.ui.touch-punch.min.js"></script>
+	<script language="javascript">
+		var _ua = (function(u){
+			return {
+				Tablet:(u.indexOf("windows")     != -1 && u.indexOf("touch")   != -1 && u.indexOf("tablet pc") == -1) 
+					||  u.indexOf("ipad")        != -1
+					|| (u.indexOf("android")     != -1 && u.indexOf("mobile") == -1)
+					|| (u.indexOf("firefox")     != -1 && u.indexOf("tablet")  != -1)
+					||  u.indexOf("kindle")      != -1
+					||  u.indexOf("silk")        != -1
+					||  u.indexOf("playbook")    != -1,
+				Mobile:(u.indexOf("windows")     != -1 && u.indexOf("phone")   != -1)
+					||  u.indexOf("iphone")      != -1
+					||  u.indexOf("ipod")        != -1
+					|| (u.indexOf("android")     != -1 && u.indexOf("mobile")  != -1)
+					|| (u.indexOf("firefox")     != -1 && u.indexOf("mobile")  != -1)
+					||  u.indexOf("blackberry")  != -1
+			}
+		})(window.navigator.userAgent.toLowerCase());
+		$(function(){
+			if(_ua.Mobile){};
+			if(_ua.Tablet){};
+		});
+	</script>
+	<script type="text/javascript">
+		var lst_eki_info =[
+			["reset","","-1000","-1000"],
+			["Aoyamacho","2044","2289","1682","青山町","あおやまちょう","1"],
+			["Akameguchi","2039","2080","1681","赤目口","あかめぐち","3"],
+			["Akuragawa","17030","3073","1037","阿倉川","あくらがわ","4"],
+			["Akeno","18014","2910","1682","明野","あけの","5"],
+			["Asama","19007","3133","1683","朝熊","あさま","6"],
+			["Asuka","8007","1784","1880","飛鳥","あすか","7"],
+			["Anagawa","20016","3263","2144","穴川","あながわ","8"],
+			["Amagatsuji","6006","1757","1218","尼ヶ辻","あまがつじ","9"],
+			["Ayameike","3020","1694","1160","菖蒲池","あやめいけ","10"],
+			["Aramoto","4006","1250","1046","荒本","あらもと","11"],
+			["Ando","2019","1267","1611","安堂","あんどう","12"],
+			["Iga-Kambe","2043","2250","1682","伊賀神戸","いがかんべ","18"],
+			["Iga-Kozu","2045","2324","1681","伊賀上津","いがこうづ","19"],
+			["Ikenoura","19008","3157","1709","池の浦","いけのうら","20"],
+			["Ikebe","12008","1588","1582","池部","いけべ","21"],
+			["Ikoma","3016","1494","1160","生駒","いこま","3016&type=1"],
+			["Ikomasanjo","27009","1335","1328","生駒山上","いこまさんじょう","23"],
+			["Ishikiri","3015","1441","1161","石切","いしきり","24"],
+			["Isuzugawa","19006","3094","1681","五十鈴川","いすずがわ","25"],
+			["Ise-Asahi","17034","3111","906","伊勢朝日","いせあさひ","13"],
+			["Ise-Ishibashi","2050","2505","1682","伊勢石橋","いせいしばし","27"],
+			["Ise-Kawashima","22008","2958","1017","伊勢川島","いせかわしま","28"],
+			["Iseshi","18017","3008","1680","伊勢市","いせし","29"],
+			["Iseda","5015","1729","697","伊勢田","いせだ","30"],
+			["Ise-Nakagawa","2052","2617","1681","伊勢中川","いせなかがわ","31"],
+			["Ise-Nakahara","18006","2654","1682","伊勢中原","いせなかはら","32"],
+			["Ise-Matsumoto","22007","2978","1040","伊勢松本","いせまつもと","33"],
+			["Ise-Wakamatsu","17020","2872","1288","伊勢若松","いせわかまつ","34"],
+			["Isoyama","17016","2789","1393","磯山","いそやま","35"],
+			["Ichio","8009","1785","1966","市尾","いちお","36"],
+			["Ichibu","11014","1493","1228","一分","いちぶ","37"],
+			["Imagawa","7008","869","1406","今川","いまがわ","38"],
+			["Imazato","2007","1017","1161","今里","いまざと","39"],
+			["Iwaki","7026","1460","1770","磐城","いわき","40"],
+			["Iwami","6014","1758","1546","石見","いわみ","41"],
+			["Ugata","20018","3263","2228","鵜方","うがた","43"],
+			["Ukiana","7029","1627","1770","浮孔","うきあな","44"],
+			["Ujiyamada","18018","3052","1681","宇治山田","うじやまだ","45"],
+			["Unebigoryomae","6020","1757","1761","畝傍御陵前","うねびごりょうまえ","47"],
+			["Umeyashiki","27007","1396","1263","梅屋敷","うめやしき","48"],
+			["Eganosho","7015","966","1632","恵我ノ荘","えがのしょう","50"],
+			["Edobashi","17011","2693","1514","江戸橋","えどばし","51"],
+			["Oji","11005","1493","1504","王寺","おうじ","54"],
+			["Oada","8014","1784","2156","大阿太","おおあだ","55"],
+			["Okubo","5016","1729","727","大久保","おおくぼ","56"],
+			["Osaka-Abenobashi","7005","869","1279","大阪阿部野橋","おおさかあべのばし","57"],
+			["Osaka-Uehommachi","2005","929","1159","大阪上本町","おおさかうえほんまち","58"],
+			["Osakakyoikudaimae","2021","1330","1682","大阪教育大前","おおさかきょういくだいまえ","59"],
+			["Osaka-Namba","1005","854","1163","大阪難波","おおさかなんば","60"],
+			["Obaneen","22013","2852","898","大羽根園","おおばねえん","61"],
+			["Omitsu","2049","2472","1682","大三","おおみつ","62"],
+			["Owada","12006","1532","1539","大輪田","おおわだ","63"],
+			["Okadera","8006","1784","1841","岡寺","おかでら","64"],
+			["Ogura","5014","1729","667","小倉","おぐら","65"],
+			["Oshimi","15007","1523","1858","忍海","おしみ","67"],
+			["Obata","18015","2941","1681","小俣","おばた","68"],
+			["Onji","2016","1172","1508","恩智","おんぢ","69"],
+			["Gakuemmae","3019","1643","1160","学園前","がくえんまえ","98"],
+			["Kasanui","6016","1757","1611","笠縫","かさぬい","72"],
+			["Kashikojima","20020","3263","2317","賢島","かしこじま","73"],
+			["Kashiharajingu-nishiguchi","7031","1711","1769","橿原神宮西口","かしはらじんぐうにしぐち","74"],
+			["Kashiharajingu-mae","7032","1757","1807","橿原神宮前","かしはらじんぐうまえ","75"],
+			["Kashiwara","14007","1144","1655","柏原","かしわら","76"],
+			["Kashiwara-minamiguchi","14006","1105","1695","柏原南口","かしわらみなみぐち","77"],
+			["Kasumigaura","17031","3092","1012","霞ヶ浦","かすみがうら","78"],
+			["Kasumigaoka","27008","1365","1295","霞ヶ丘","かすみがおか","79"],
+			["Kasumori","17045","3334","573","烏森","かすもり","80"],
+			["Katashimo","2018","1235","1578","堅下","かたしも","81"],
+			["Gakken-Kita-Ikoma","4010","1610","1084","学研北生駒","がっけんきたいこま","99"],
+			["Gakken-Nara-Tomigaoka","4011","1653","1083","学研奈良登美ヶ丘","がっけんならとみがおか","100"],
+			["Kamitobaguchi","5008","1729","473","上鳥羽口","かみとばぐち","82"],
+			["Kaminogo","20014","3264","2054","上之郷","かみのごう","83"],
+			["Kaminotaishi","7022","1218","1770","上ノ太子","かみのたいし","84"],
+			["Kamo","20009","3264","1863","加茂","かも","85"],
+			["Kawai-Takaoka","2051","2539","1682","川合高岡","かわいたかおか","86"],
+			["Kawagoe-Tomisuhara","17033","3111","947","川越富洲原","かわごえとみすはら","87"],
+			["Kawachi-Amami","7011","869","1524","河内天美","かわちあまみ","88"],
+			["Kawachi-Eiwa","3006","1114","1160","河内永和","かわちえいわ","89"],
+			["Kawachi-Kokubu","2020","1298","1645","河内国分","かわちこくぶ","90"],
+			["Kawachi-Kosaka","3007","1151","1160","河内小阪","かわちこさか","91"],
+			["Kawachi-Nagano","16012","1092","2034","河内長野","かわちながの","92"],
+			["Kawachi-Hanazono","3010","1260","1161","河内花園","かわちはなぞの","93"],
+			["Kawachi-Matsubara","7014","941","1605","河内松原","かわちまつばら","94"],
+			["Kawachi-Yamamoto","2014","1112","1444","河内山本","かわちやまもと","95"],
+			["Kawanishi","16009","1091","1924","川西","かわにし","96"],
+			["Kawaramachi","17029","3053","1062","川原町","かわらまち","97"],
+			["Kikyogaoka","2041","2167","1681","桔梗が丘","ききょうがおか","103"],
+			["Kishi","16006","1092","1816","喜志","きし","104"],
+			["Kita-Kusu","17024","2948","1193","北楠","きたくす","105"],
+			["Kita-Tanabe","7007","869","1365","北田辺","きたたなべ","106"],
+			["Kizugawadai","5026","1729","1028","木津川台","きづがわだい","107"],
+			["Kyuhojiguchi","2012","1111","1348","久宝寺口","きゅうほうじぐち","108"],
+			["Kyoto","5005","1728","375","京都","きょうと","109"],
+			["Kintetsu-Kanie","17041","3238","679","近鉄蟹江","きんてつかにえ","101"],
+			["Kintetsu-Koriyama","6009","1756","1349","近鉄郡山","きんてつこおりやま","110"],
+			["Kintetsu-Gose","15008","1524","1897","近鉄御所","きんてつごせ","111"],
+			["Kintetsu-Shimoda","2024","1468","1682","近鉄下田","きんてつしもだ","112"],
+			["Kintetsu-Shinjo","15006","1523","1818","近鉄新庄","きんてつしんじょう","113"],
+			["Kintetsu-Tambabashi","5011","1729","570","近鉄丹波橋","きんてつたんばばし","114"],
+			["Kintetsu-Tomida","17032","3111","987","近鉄富田","きんてつとみだ","115"],
+			["Kintetsu-Nagashima","17037","3142","784","近鉄長島","きんてつながしま","116"],
+			["Kintetsu-Nagoya","17048","3413","487","近鉄名古屋","きんてつなごや","117"],
+			["Kintetsu-Nara","3023","1836","1184","近鉄奈良","きんてつなら","118"],
+			["Kintetsu-Nippombashi","1006","890","1159","近鉄日本橋","きんてつにっぽんばし","119"],
+			["Kintetsu-Hatta","17044","3311","599","近鉄八田","きんてつはった","120"],
+			["Kintetsu-Miyazu","5023","1729","938","近鉄宮津","きんてつみやづ","121"],
+			["Kintetsu-Yao","2013","1111","1395","近鉄八尾","きんてつやお","122"],
+			["Kintetsu-Yatomi","17038","3166","758","近鉄弥富","きんてつやとみ","123"],
+			["Kintetsu-Yokkaichi","17028","3028","1092","近鉄四日市","きんてつよっかいち","124"],
+			["Kushida","18010","2790","1682","櫛田","くしだ","125"],
+			["Kujo","6008","1757","1309","九条","くじょう","126"],
+			["Kusu","17023","2930","1217","楠","くす","127"],
+			["Kuzu","8010","1785","1998","葛","くず","129"],
+			["Kusurimizu","8012","1785","2078","薬水","くすりみず","128"],
+			["Kutsukake","20013","3264","2016","沓掛","くつかけ","130"],
+			["Kutsukawa","5017","1729","757","久津川","くつかわ","131"],
+			["Kuroda","12011","1686","1581","黒田","くろだ","132"],
+			["Kuwana","17036","3111","817","桑名","くわな","133"],
+			["Koishiro","18011","2819","1681","漕代","こいしろ","135"],
+			["Goido","2025","1512","1681","五位堂","ごいどう","144"],
+			["Kodo","5021","1729","876","興戸","こうど","136"],
+			["Kogane","17046","3358","547","黄金","こがね","137"],
+			["Koshibe","8016","1845","2211","越部","こしべ","138"],
+			["Gochi","20012","3264","1978","五知","ごち","145"],
+			["Koboreguchi","7006","869","1325","河堀口","こぼれぐち","139"],
+			["Komagatani","7021","1160","1770","駒ヶ谷","こまがたに","140"],
+			["Komada","5024","1729","968","狛田","こまだ","141"],
+			["Komeno","17047","3382","521","米野","こめの","142"],
+			["Komono","22011","2895","944","菰野","こもの","143"],
+			["Saiku","18012","2850","1680","斎宮","さいくう","146"],
+			["Sakakibara-onsenguchi","2048","2431","1681","榊原温泉口","さかきばらおんせんぐち","147"],
+			["Sakura","22010","2915","968","桜","さくら","148"],
+			["Sakurai","2033","1865","1682","桜井","さくらい","149"],
+			["Sakogi","17039","3190","730","佐古木","さこぎ","150"],
+			["Samitagawa","12007","1559","1561","佐味田川","さみたがわ","151"],
+			["Sambommatsu","2038","2048","1681","三本松","さんぼんまつ","152"],
+			["Shionomiya","16011","1092","1998","汐ノ宮","しおのみや","156"],
+			["Shiohama","17025","2966","1169","塩浜","しおはま","157"],
+			["Shigisanguchi","13007","1189","1444","信貴山口","しぎさんぐち","158"],
+			["Shigisanshita","11006","1494","1475","信貴山下","しぎさんした","159"],
+			["Shima-Akasaki","20007","3242","1798","志摩赤崎","しまあかさき","160"],
+			["Shima-Isobe","20015","3263","2099","志摩磯部","しまいそべ","161"],
+			["Shima-Shimmei","20019","3264","2272","志摩神明","しましんめい","162"],
+			["Shima-Yokoyama","20017","3263","2183","志摩横山","しまよこやま","163"],
+			["Shimoichiguchi","8015","1814","2186","下市口","しもいちぐち","164"],
+			["Shakudo","7027","1525","1769","尺土","しゃくど","165"],
+			["Jujo","5007","1729","443","十条","じゅうじょう","177"],
+			["Shuntokumichi","2009","1108","1206","俊徳道","しゅんとくみち","166"],
+			["Shiraki","20011","3264","1939","白木","しらき","167"],
+			["Shiratsuka","17013","2732","1466","白塚","しらつか","168"],
+			["Shiraniwadai","4009","1566","1084","白庭台","しらにわだい","169"],
+			["Shiroko","17018","2829","1339","白子","しろこ","170"],
+			["Shin-Ishikiri","4008","1411","1046","新石切","しんいしきり","171"],
+			["Shin-Oji","12005","1532","1505","新王寺","しんおうじ","172"],
+			["Shin-Omiya","3022","1791","1184","新大宮","しんおおみや","173"],
+			["Shinsho","17027","3005","1121","新正","しんしょう","174"],
+			["Shin-Tanabe","5020","1729","847","新田辺","しんたなべ","175"],
+			["Shin-Hosono","5025","1729","997","新祝園","しんほうその","176"],
+			["Suzukashi","25007","2826","1242","鈴鹿市","すずかし","178"],
+			["Sekiya","2022","1376","1681","関屋","せきや","179"],
+			["Seyakitaguchi","11007","1493","1442","勢野北口","せやきたぐち","180"],
+			["Senzai","10007","1846","1428","前栽","せんざい","181"],
+			["Daifuku","2032","1832","1681","大福","だいふく","197"],
+			["Taimadera","7025","1399","1770","当麻寺","たいまでら","183"],
+			["Takadashi","7028","1578","1770","高田市","たかだし","184"],
+			["Takadahonzan","17012","2712","1489","高田本山","たかだほんざん","185"],
+			["Takatsuno","22009","2937","991","高角","たかつの","186"],
+			["Takanohara","5028","1728","1094","高の原","たかのはら","187"],
+			["Takaminosato","7013","916","1578","高見ノ里","たかみのさと","188"],
+			["Takayasu","2015","1140","1476","高安","たかやす","189"],
+			["Takayasuyama","26006","1239","1445","高安山","たかやすやま","190"],
+			["Takawashi","7016","991","1658","高鷲","たかわし","191"],
+			["Takidanifudo","16010","1092","1961","滝谷不動","たきだにふどう","192"],
+			["Takeda","5009","1729","502","竹田","たけだ","193"],
+			["Tajima","12010","1653","1581","但馬","たじま","194"],
+			["Tatsutagawa","11008","1493","1412","竜田川","たつたがわ","195"],
+			["Tawaramoto","6015","1757","1580","田原本","たわらもと","196"],
+			["Chisato","17015","2769","1418","千里","ちさと","199"],
+			["Chiyozaki","17019","2853","1312","千代崎","ちよざき","200"],
+			["Tsu","17010","2670","1543","津","つ","17010&type=1"],
+			["Tsukiyama","2026","1558","1682","築山","つきやま","202"],
+			["Tsu-shimmachi","17009","2648","1573","津新町","つしんまち","203"],
+			["Tsutsui","6010","1757","1388","筒井","つつい","204"],
+			["Tsuzumigaura","17017","2808","1370","鼓ヶ浦","つづみがうら","205"],
+			["Tsubosakayama","8008","1785","1927","壺阪山","つぼさかやま","206"],
+			["Tsuruhashi","2006","979","1162","鶴橋","つるはし","207"],
+			["Terada","5018","1730","787","寺田","てらだ","208"],
+			["Tenri","10008","1892","1429","天理","てんり","209"],
+			["Toji","5006","1729","413","東寺","とうじ","212"],
+			["Domyoji","7019","1063","1738","道明寺","どうみょうじ","223"],
+			["Toda","17042","3263","653","戸田","とだ","213"],
+			["Tonosho","5019","1730","817","富野荘","とのしょう","214"],
+			["Toba","19009","3188","1742","鳥羽","とば","215"],
+			["Tomio","3018","1591","1160","富雄","とみお","217"],
+			["Tomiyoshi","17040","3214","706","富吉","とみよし","218"],
+			["Toyotsu-Ueno","17014","2752","1442","豊津上野","とよつうえの","219"],
+			["Toriimae","27005","1457","1196","鳥居前","とりいまえ","220"],
+			["Tondabayashi","16007","1092","1852","富田林","とんだばやし","221"],
+			["Tondabayashi-nishiguchi","16008","1092","1888","富田林西口","とんだばやしにしぐち","222"],
+			["Nakagawara","22006","2999","1064","中川原","なかがわら","232"],
+			["Naka-Komono","22012","2874","921","中菰野","なかこもの","233"],
+			["Nagase","2010","1113","1253","長瀬","ながせ","235"],
+			["Nagata","4005","1170","1046","長田","ながた","236"],
+			["Nakanogo","20006","3217","1773","中之郷","なかのごう","234"],
+			["Nagonoura","17022","2911","1240","長太ノ浦","なごのうら","237"],
+			["Nabata","11015","1493","1197","菜畑","なばた","238"],
+			["Nabari","2040","2121","1682","名張","なばり","239"],
+			["Nikaido","10006","1802","1428","二階堂","にかいどう","241"],
+			["Nishi-Aoyama","2046","2357","1682","西青山","にしあおやま","242"],
+			["Nishi-Tawaramoto","12012","1719","1581","西田原本","にしたわらもと","243"],
+			["Nishinokyo","6007","1758","1263","西ノ京","にしのきょう","244"],
+			["Nijo","2023","1422","1681","二上","にじょう","246"],
+			["Nijozan","7023","1279","1770","二上山","にじょうざん","247"],
+			["Nijojinjaguchi","7024","1340","1769","二上神社口","にじょうじんじゃぐち","248"],
+			["Ninokuchi","6017","1757","1641","新ノ口","にのくち","249"],
+			["Nukata","3014","1404","1160","額田","ぬかた","250"],
+			["Nunose","7012","892","1551","布忍","ぬのせ","251"],
+			["Haibara","2036","1972","1681","榛原","はいばら","254"],
+			["Haginodai","11012","1493","1289","萩の台","はぎのだい","255"],
+			["Hashio","12009","1620","1581","箸尾","はしお","256"],
+			["Hajinosato","7018","1039","1713","土師ノ里","はじのさと","257"],
+			["Hasedera","2035","1933","1681","長谷寺","はせでら","258"],
+			["Hattorigawa","13006","1150","1444","服部川","はっとりがわ","259"],
+			["Harinakano","7009","869","1444","針中野","はりなかの","260"],
+			["Higashi-Aoyama","2047","2390","1682","東青山","ひがしあおやま","261"],
+			["Higashi-Ikoma","3017","1545","1161","東生駒","ひがしいこま","262"],
+			["Higashi-Hanazono","3011","1296","1160","東花園","ひがしはなぞの","263"],
+			["Higashi-Matsusaka","18009","2759","1682","東松阪","ひがしまつさか","264"],
+			["Higashiyama","11011","1493","1319","東山","ひがしやま","265"],
+			["Hisai","17007","2604","1625","久居","ひさい","266"],
+			["Hyotan-yama","3012","1332","1160","瓢箪山","ひょうたんやま","268"],
+			["Hiraoka","3013","1368","1160","枚岡","ひらおか","269"],
+			["Hiratacho","25009","2781","1193","平田町","ひらたちょう","270"],
+			["Hirahata","6011","1758","1428","平端","ひらはた","271"],
+			["Family-koemmae","6012","1757","1467","ファミリー公園前","ふぁみりいこうえんまえ","272"],
+			["Fukugami","8013","1784","2117","福神","ふくがみ","273"],
+			["Fujiidera","7017","1014","1685","藤井寺","ふじいでら","276"],
+			["Fushimi","5010","1729","533","伏見","ふしみ","274"],
+			["Fushiya","17043","3286","626","伏屋","ふしや","275"],
+			["Fuse","2008","1068","1159","布施","ふせ","277"],
+			["Funatsu","20008","3264","1826","船津","ふなつ","278"],
+			["Furuichi","7020","1092","1769","古市","ふるいち","279"],
+			["Heijo","5029","1728","1130","平城","へいじょう","280"],
+			["Heguri","11009","1493","1380","平群","へぐり","281"],
+			["Hozanji","27006","1426","1229","宝山寺","ほうざんじ","282"],
+			["Bojo","7030","1669","1769","坊城","ぼうじょう","284"],
+			["Hozenji","2017","1203","1544","法善寺","ほうぜんじ","283"],
+			["Masuo","17035","3111","865","益生","ますお","287"],
+			["Masuga","2029","1707","1682","真菅","ますが","288"],
+			["Matsuo","20010","3264","1902","松尾","まつお","289"],
+			["Matsugasaki","18007","2683","1682","松ヶ崎","まつがさき","290"],
+			["Matsusaka","18008","2721","1681","松阪","まつさか","291"],
+			["Matsuzuka","2028","1663","1682","松塚","まつづか","292"],
+			["Mida","17021","2891","1264","箕田","みだ","294"],
+			["Mikkaichi","25008","2803","1218","三日市","みっかいち","295"],
+			["Mito","2011","1111","1302","弥刀","みと","296"],
+			["Minami-Ikoma","11013","1493","1258","南生駒","みなみいこま","297"],
+			["Minamigaoka","17008","2628","1597","南が丘","みなみがおか","298"],
+			["Mihata","2042","2208","1681","美旗","みはた","300"],
+			["Miminashi","2031","1797","1682","耳成","みみなし","301"],
+			["Miyamaki","5022","1729","907","三山木","みやまき","302"],
+			["Miyamachi","18016","2971","1681","宮町","みやまち","303"],
+			["Miyamado","17026","2985","1145","海山道","みやまど","304"],
+			["Myojo","18013","2880","1681","明星","みょうじょう","305"],
+			["Mukaijima","5013","1729","636","向島","むかいじま","306"],
+			["Muda","8017","1877","2235","六田","むだ","307"],
+			["Muroguchi-Ono","2037","2014","1681","室生口大野","むろうぐちおおの","308"],
+			["Motosanjoguchi","11010","1493","1350","元山上口","もとさんじょうぐち","309"],
+			["Momozono","17006","2578","1651","桃園","ももぞの","310"],
+			["Momoyamagoryomae","5012","1728","605","桃山御陵前","ももやまごりょうまえ","311"],
+			["Yaenosato","3008","1187","1160","八戸ノ里","やえのさと","3008&type=1"],
+			["Yagi-nishiguchi","6019","1757","1725","八木西口","やぎにしぐち","316"],
+			["Yata","7010","869","1484","矢田","やた","317"],
+			["Yanagi","25006","2849","1267","柳","やなぎ","25006&type=1"],
+			["Yamadagawa","5027","1729","1057","山田川","やまだがわ","319"],
+			["Yamato-Asakura","2034","1898","1680","大和朝倉","やまとあさくら","17"],
+			["Yamato-Kamiichi","8018","1923","2235","大和上市","やまとかみいち","321"],
+			["Yamato-Saidaiji","3021","1745","1171","大和西大寺","やまとさいだいじ","322"],
+			["Yamato-Takada","2027","1610","1681","大和高田","やまとたかだ","323"],
+			["Yamato-Yagi","2030","1756","1682","大和八木","やまとやぎ","324"],
+			["Yuzaki","6013","1758","1507","結崎","ゆうざき","325"],
+			["Yunoyama-onsen","22014","2831","873","湯の山温泉","ゆのやまおんせん","326"],
+			["Yoshita","4007","1331","1046","吉田","よした","329"],
+			["Yoshino","8020","2018","2235","吉野","よしの","330"],
+			["Yoshinoguchi","8011","1784","2038","吉野口","よしのぐち","331"],
+			["Yoshinojingu","8019","1970","2234","吉野神宮","よしのじんぐう","332"],
+			["Wakae-Iwata","3009","1223","1161","若江岩田","わかえいわた","334"],
+
+			["Katsuragi-Sanjo","336","1430","1900","葛城山上","かつらぎさんじょう","336"],
+			["Katsuragi-Tozanguchi","335","1475","1900","葛城登山口","かつらぎとざんぐち","335"],
+
+			["","","",""]
+		];
+
+		var ini_body_top  ;
+		var ini_body_left ;
+			ini_body_top    = $( "#wrapper" ).offset().top;
+			ini_body_left   = $( "#wrapper" ).offset().left;
+		var mini_map_width  = 740;
+		var mini_map_height = 522;
+
+		function setData(theData) {
+			$("meta[name='viewport']").attr('content', 'width=device-width, user-scalable=yes, initial-scale=0.5, maximum-scale=0.5' );
+
+			window.location.href="http://www.kintetsu.co.jp/tetsudo/tetsudo_info/zenekijikoku_info.html?pekiname=" + theData;
+
+			$("meta[name='viewport']").attr('content', 'width=640, user-scalable=yes, initial-scale=0.5, maximum-scale=2' );
+
+			ini_body_top    = $( "#wrapper" ).offset().top;
+			ini_body_left   = $( "#wrapper" ).offset().left;
+			return false;
+		}
+
+		$(function(){
+			var areaOffset     ="";
+			var offsetTop      ="";
+			var offsetLeft     ="";
+			var base_map        = $('#wrapper_map #img_map').width();
+			var bairitu         = base_map / mini_map_width;
+			var info_click     ="0";
+			var info_zoom      ="0";
+			var target_eki     ="0";
+			var f_pop          ="0";
+			var f_move         ="0";
+			var f_anime        ="0";
+			var f_clk_tasen    ="0";
+			var animation_speed = 300;
+
+			$('#wrapper_map #img_map' ).draggable({ start : function(){
+				f_move     = 1;
+				$("#img_popup"                 ).css("display","none");
+				$('#wrapper_map #img_map_mini' ).css("display","none");
+			}});
+			$('#wrapper_map #img_map' ).draggable({ stop  : function(){
+				f_move     = 1;
+				//$('#wrapper_map #img_map_mini' ).fadeIn();
+				areaOffset = $('#wrapper_map #img_map').position();
+				offsetTop  = ( areaOffset.top  )*(-1);
+				offsetLeft = ( areaOffset.left )*(-1);
+				if((offsetTop > 2086) && (offsetLeft > 2950) ){$('#wrapper_map #img_map' ).animate({top: -2075,  left : -2945       },200);}
+				if((offsetTop > 2086) && (offsetLeft > 0)    ){$('#wrapper_map #img_map' ).animate({top: -2075                      },200);}
+				if((offsetTop > 2086) && (offsetLeft < 0)    ){$('#wrapper_map #img_map' ).animate({top: -2075,  left :  0          },200);}
+				if((offsetTop > 0   ) && (offsetLeft > 2950) ){$('#wrapper_map #img_map' ).animate({             left : -2945       },200);}
+				if((offsetTop < 0   ) && (offsetLeft > 2950) ){$('#wrapper_map #img_map' ).animate({top:  0,     left : -2945       },200);}
+				if((offsetTop < 0   ) && (offsetLeft < 0)    ){$('#wrapper_map #img_map' ).animate({top:  0,     left :  0          },200);}
+				if((offsetTop < 0   ) && (offsetLeft > 0)    ){$('#wrapper_map #img_map' ).animate({top:  0                         },200);}
+				if((offsetTop > 0   ) && (offsetLeft < 0)    ){$('#wrapper_map #img_map' ).animate({             left :  0          },200);}
+			}});
+			$('#wrapper_map #img_map'      ).draggable('disable');
+			$('#wrapper_map #img_map'      ).css("display","none");
+			$('#wrapper_map #img_map_mini' ).bind( "mouseup" , function(e){
+				f_move = 0;
+				if(f_anime == 0){
+					f_anime    = 1;
+					info_zoom  = 1;
+					$('#wrapper_map #img_map').draggable('enable');
+					areaOffset = $('#wrapper_map').offset();
+					offsetTop  = ((e.pageY) - (areaOffset.top)  );
+					offsetLeft = ((e.pageX) - (areaOffset.left) );
+
+					var buf_width  = $('#wrapper_map #img_map_mini').width()  * bairitu;
+					var buf_height = $('#wrapper_map #img_map_mini').height() * bairitu;
+					$('#wrapper_map #img_map_mini' ).stop().animate({
+						width  : buf_width, 
+						height : buf_height, 
+						top    : (offsetTop  + ($( "#wrapper" ).offset().top  - ini_body_top )) * (bairitu-1)*(-1), 
+						left   : (offsetLeft + ($( "#wrapper" ).offset().left - ini_body_left)) * (bairitu-1)*(-1)
+					},animation_speed,function(){
+						f_anime = 0;
+						$('#wrapper_map #img_map' ).fadeIn("fast");
+						$('#wrapper_map #img_map' ).css({
+							top  : (offsetTop  + ($( "#wrapper" ).offset().top  - ini_body_top )) * (bairitu-1)*(-1),
+							left : (offsetLeft + ($( "#wrapper" ).offset().left - ini_body_left)) * (bairitu-1)*(-1)
+						});
+					});
+				}
+			});
+			$('#wrapper_map' ).bind( "mouseup" , function(e){
+				if(info_zoom == 0){
+					f_move = 0;
+					if(f_anime == 0){
+						f_anime    = 1;
+						info_zoom  = 1;
+					}
+				}else{
+					var mapArea    = $('#wrapper_map #img_map').offset();
+					var mapTop     = ((e.pageY) - (mapArea.top)  ) + ($( "#wrapper" ).offset().top  - ini_body_top);     //地図画像上のポイント座標。
+					var mapLeft    = ((e.pageX) - (mapArea.left) ) + ($( "#wrapper" ).offset().left - ini_body_left);    //地図画像上のポイント座標。
+					var img_width  = $('#wrapper_map'          ).width() ;        //表示部の中心点
+					var img_height = $('#wrapper_map'          ).height();        //表示部の中心点
+					var img_left   = $('#wrapper_map'          ).offset().left; //表示部の左上
+					var img_top    = $('#wrapper_map'          ).offset().top;  //表示部の左上
+					var moveToLeft = $('#wrapper_map #img_map' ).position().left - ((e.pageX) - (img_left + img_width  / 2 ));
+					var moveToTop  = $('#wrapper_map #img_map' ).position().top  - ((e.pageY) - (img_top  + img_height / 2 ));
+					var f_eki = 0;
+
+	//$("#info").html(Math.round(mapLeft) + "  : " + Math.round(mapTop)).css("font-size","32px");
+
+					var num_lst = lst_eki_info.length;
+					var tyousei_pixel   = 6;
+					for (var i = 1; i < num_lst; i++) {
+						var x = ( lst_eki_info[i][2] - mapLeft - tyousei_pixel);
+						var y = ( lst_eki_info[i][3] - mapTop  - tyousei_pixel);
+						if ((x >  -17 && x <  17) && ( y > -17 && y < 17)){
+							f_eki = i;
+							break;
+						}
+					}
+
+					if (f_eki == 0){
+						if(f_clk_tasen == 0){
+							target_eki = 0;
+							if (f_pop == 0){
+								if(f_move == 0){
+									if (f_anime == 0){
+										f_anime   = 1;
+										info_zoom = 0;
+										$('#wrapper_map #img_map'      ).draggable('disable');
+										$('#wrapper_map #img_map'      ).fadeOut("fast", function(){f_anime = 0;});
+										$('#wrapper_map #img_map_mini' ).css({width : mini_map_width , height : mini_map_height, top : 0, left : 0}).css("display","block");
+									}
+								}
+							}else{ $("#img_popup").css("display", "none"); }
+							f_pop  = 0; 
+							f_move = 0;
+						}
+						f_clk_tasen = 0;
+					}else{
+						if(f_pop == 0){
+							f_move     = 0;
+							info_click = f_eki;
+							$("#img_popup p").html('<span style="color : #4d4d4d;;font-weight : normal;font-size:90%">駅名をクリック</span><br><span style="font-size : 80%">[' + lst_eki_info[info_click][5] +']</span><br><span style="font-size : 130%;font-weight : bold; color : red;text-decoration : underline">' + lst_eki_info[info_click][4] +'駅</span>');
+							var popup_left       = ( $('#wrapper_map #img_map').position().left - lst_eki_info[info_click][2] * (-1)    ) - 140  + "px";
+							var popup_top        = ( $('#wrapper_map #img_map').position().top  - lst_eki_info[info_click][3] * (-1)    ) - 120 + "px";
+							$("#img_popup").css("display","block").css("left", popup_left).css("top", popup_top );
+							var popup_moveToLeft = $('#img_popup' ).position().left - ((e.pageX) - (img_left + img_width  / 2 )) ;
+							var popup_moveToTop  = $('#img_popup' ).position().top  - ((e.pageY) - (img_top  + img_height / 2 )) ;
+							if( (navigator.userAgent.toLowerCase().indexOf('win') != -1) ){
+								$("#img_popup"            ).animate({top: popup_moveToTop , left : popup_moveToLeft },500);
+								$('#wrapper_map #img_map' ).animate({top: moveToTop - 5   , left : moveToLeft       },500);
+								$('#wrapper_map #img_map_mini' ).fadeOut("fast");
+							}
+							f_pop = 1;
+							target_eki = info_click;
+						}else{
+							f_pop  = 0;
+							$("#img_popup").css("display", "none" );  
+						}
+					}
+				}
+				f_move = 0;
+			});
+			$("#img_popup p").click (function(){ setData(lst_eki_info[info_click][6]); });  
+			$("#img_popup p").hover( function(){ $(this).css("cursor","pointer");}, function(){$(this).css("cursor","auto");} )
+			$("#img_map").mousemove(
+				function(e){
+					if(info_zoom == 1){
+						var mapArea    = $('#wrapper_map #img_map').offset();
+						var mapTop     = ((e.pageY) - (mapArea.top)  ) + ($( "#wrapper" ).offset().top  - ini_body_top);     //地図画像上のポイント座標。
+						var mapLeft    = ((e.pageX) - (mapArea.left) ) + ($( "#wrapper" ).offset().left - ini_body_left);    //地図画像上のポイント座標。
+						var f_eki = 0;
+						var num_lst = lst_eki_info.length;
+						var tyousei_pixel   = 6;
+						for (var i = 1; i < num_lst; i++) {
+							var x = ( lst_eki_info[i][2] - mapLeft - tyousei_pixel);
+							var y = ( lst_eki_info[i][3] - mapTop  - tyousei_pixel);
+							if ((x >  -17 && x <  17) && ( y > -17 && y < 17)){
+								f_eki = i;
+								break;
+							}
+						}
+						if(f_eki == 0){$(this).css("cursor","auto");}
+						else{$(this).css("cursor","pointer");}
+					}
+				}
+			);
+			$("#img_close" ).click( function(){ $("#wrapper_map #img_map").css("cursor","default");$("#img_popup").css("display","none");return false } );
+			$("#img_close" ).hover( function(){ $(this).css("cursor","pointer");}, function(){$(this).css("cursor","auto");})
+		});
+	</script>
+
+						<!--PCとスマフォ切り替え-->
+						<style>
+							#tetsudo_menu_pc #main_wraper{ display : block; }
+							#tetsudo_menu_sp #main_wraper{ display : none;  }
+							#tetsudo_menu_pc #sp_wraper{   display : none;  }
+							#tetsudo_menu_sp #sp_wraper{   display : block; }
+							#tetsudo_menu_sp #station  {   width   : 100%;  }
+						</style>
+						<p class="kensaku" style="text-align : center;margin-top : 10px;">[検索方法] ｜<a href="#rosen">路線図から検索する</a>｜<a href="#eki">駅名から検索する</a>｜<a href="/railway/Dia/dia_info.html" target="_blank">ご利用上の注意</a>｜</p>
+						<dl id="rosen" class="frame">
+							<dt>各路線を選択すると駅に関する情報をご覧いただけます。</dt>
+							<dd class="middle">
+								<div align="center">
+									<div style="position : relative">
+										<p style="font-size: 14px;text-align: right;margin: -32px 20px 10px auto;">
+											<a href="#anc_goannai" id="btn_anc_goannnai">各路線停車駅の確認</a>
+										</p>
+										<p style="font-weight : bold;text-align : center;font-size : 14px;">
+											使い方：[ 地図をクリックして拡大 ] → [ 駅ナンバーをクリック ] → [ 表示される駅名をクリック ]
+										</p>
+										<div id="sp_wraper" style="width:628px;height:442px;margin:0 auto;position:relative;border : 1px solid #999;">
+											<iframe src="./zenekijikoku_sp.html" width="628" height="442" scrolling="no" frameborder="0"></iframe>
+									    </div>
+										<div id="main_wraper" style="width:740px;height:522px;margin:0 auto;position:relative;">
+										<!--<p id="info"></p>-->
+											<div id="wrapper_map" style="width:740px;height:522px;overflow:hidden;position:relative;background:gray;border : 1px solid #999;">
+												<img id="img_map_mini" src="./images/japan/mini_rosen_pc.jpg" style="position:absolute;top:0;left : 0;" >
+												<div id="img_map" style="width:3686px; height:2600px; position:absolute;;top:0;left : 0;">
+													<table width="3686" height="2600" border="0" cellpadding="0" cellspacing="0" style="user-select:none;-webkit-user-select:none;-moz-user-select:none;-khtml-user-select:none;-webkit-user-drag:none;-khtml-user-drag:none;">
+													<tr><td><img src="./images/japan/ekitan_dia_japan_01.png" width="614" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_02.png" width="615" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_03.png" width="614" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_04.png" width="614" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_05.png" width="615" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_06.png" width="614" height="433"></td></tr>
+													<tr><td><img src="./images/japan/ekitan_dia_japan_07.png" width="614" height="434"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_08.png" width="615" height="434"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_09.png" width="614" height="434"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_10.png" width="614" height="434"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_11.png" width="615" height="434"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_12.png" width="614" height="434"></td></tr>
+													<tr><td><img src="./images/japan/ekitan_dia_japan_13.png" width="614" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_14.png" width="615" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_15.png" width="614" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_16.png" width="614" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_17.png" width="615" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_18.png" width="614" height="433"></td></tr>
+													<tr><td><img src="./images/japan/ekitan_dia_japan_19.png" width="614" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_20.png" width="615" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_21.png" width="614" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_22.png" width="614" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_23.png" width="615" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_24.png" width="614" height="433"></td></tr>
+													<tr><td><img src="./images/japan/ekitan_dia_japan_25.png" width="614" height="434"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_26.png" width="615" height="434"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_27.png" width="614" height="434"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_28.png" width="614" height="434"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_29.png" width="615" height="434"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_30.png" width="614" height="434"></td></tr>
+													<tr><td><img src="./images/japan/ekitan_dia_japan_31.png" width="614" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_32.png" width="615" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_33.png" width="614" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_34.png" width="614" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_35.png" width="615" height="433"></td>
+														<td><img src="./images/japan/ekitan_dia_japan_36.png" width="614" height="433"></td></tr>
+													</table>
+												</div>
+												<div id="img_popup"  style="position:absolute;display:none;width:313px;height:114px;background:url(./images/japan/icn_popup_wide.png) no-repeat;z-index:1000;font-family    : 'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;" >
+													<div id="img_close"  style="position: absolute;right: 50px;bottom: 40px;font-size: 16px;font-weight: bold;" >Ｘ</div>
+													<p style="padding-bottom : 5px;margin:5px 60px 0px 15px;font-weight:bold;letter-spacing:1px;word-wrap:break-word;text-align:center;font-size: 18px;line-height: 1.2;"></p>
+												</div>
+											</div>
+										</div>
+										<p style="height :1px;clear:both;"><br></p>
+									</div>
+								</div>
+								<p style="margin: 20px auto 5px 0;" id="anc_goannai">☆停車駅のご案内</p>
+								<table class="route" id="route">
+									<tr><td><a href="../railway/rosen/A50002R.html#nanba_nara"        ><img src="./images/japan/icn_number_a.png">難波線・奈良線</a></td>
+										<td><a href="../railway/rosen/A50003R.html#kyoto_kashihara"   ><img src="./images/japan/icn_number_b.png">京都線・橿原線</a></td>
+										<td><a href="../railway/rosen/A50002R.html#keihanna"          ><img src="./images/japan/icn_number_c.png">けいはんな線</a></td>
+										<td><a href="../railway/rosen/A50004R.html#osaka"             ><img src="./images/japan/icn_number_d.png">大阪線</a></td></tr>
+									<tr><td><a href="../railway/rosen/A50006R.html#nagoya"            ><img src="./images/japan/icn_number_e.png">名古屋線</a></td>
+										<td><a href="../railway/rosen/A50005R.html#minami_yoshino"    ><img src="./images/japan/icn_number_f.png">南大阪線・吉野線</a></td>
+										<td><a href="../railway/rosen/A50002R.html#ikoma"             ><img src="./images/japan/icn_number_g.png">生駒線</a></td>
+										<td><a href="../railway/rosen/A50003R.html#tenri"             ><img src="./images/japan/icn_number_h.png">天理線</a></td></tr>
+									<tr><td><a href="../railway/rosen/A50003R.html#tawaramoto"        ><img src="./images/japan/icn_number_i.png">田原本線</a></td>
+										<td><a href="../railway/rosen/A50004R.html#shigi"             ><img src="./images/japan/icn_number_j.png">信貴線</a></td>
+										<td><a href="../railway/rosen/A50006R.html#yunoyama"          ><img src="./images/japan/icn_number_k.png">湯の山線</a></td>
+										<td><a href="../railway/rosen/A50006R.html#suzuka"            ><img src="./images/japan/icn_number_l.png">鈴鹿線</a></td></tr>
+									<tr><td><a href="../railway/rosen/A50004R.html#yamada_toba_shima" ><img src="./images/japan/icn_number_m.png">山田線・鳥羽線・志摩線</a></td>
+										<td><a href="../railway/rosen/A50005R.html#doumyou"           ><img src="./images/japan/icn_number_n.png">道明寺線</a></td>
+										<td><a href="../railway/rosen/A50005R.html#nagano"            ><img src="./images/japan/icn_number_o.png">長野線</a></td>
+										<td><a href="../railway/rosen/A50005R.html#gose"              ><img src="./images/japan/icn_number_p.png">御所線</a></td></tr>
+									<tr><td><a href="../railway/rosen/A50002R.html#ikoma_cable"       ><img src="./images/japan/icn_number_y.png">生駒ケーブル</a></td>
+										<td><a href="../railway/rosen/A50004R.html#nishi"             ><img src="./images/japan/icn_number_z.png">西信貴ケーブル</a></td>
+										<td colspan="2" ><a href="../railway/rosen/A50005R.html#katsuragi-r"><span style="margin-left:23px">葛城山ロープウェイ</span></a></td></tr>
+								</table>
+								<p style="margin:10px auto 0px 10px;">●停車駅のご案内は<a href="/railway/rosen/stop.pdf" target="_blank">こちら</a>をご覧ください。</p>
+							</dd>
+							<dd class="bottom">&nbsp;</dd>
+						</dl>
+						<dl id="eki" class="frame2">
+							<dt>駅をお選びください</dt>
+							<dd class="middle">
+								<p class="link"><a href="#a">あ行</a> ｜ <a href="#ka">か行</a> ｜ <a href="#sa">さ行</a> ｜ <a href="#ta">た行</a> ｜ <a href="#na">な行</a> ｜ <a href="#ha">は行</a> ｜ <a href="#ma">ま行</a> ｜ <a href="#ya">や行</a> ｜ <a href="#wa">わ行</a></p>
+								<table id="station">
+									<tr><td rowspan="4" class="index1" id="a">あ</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=1"            >青山町</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=3"            >赤目口</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=4"            >阿倉川</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=5"            >明野</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=6"            >朝熊</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=7"            >飛鳥</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=8"            >穴川</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=9"            >尼ヶ辻</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=10"           >菖蒲池</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=11"           >荒本</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=12"           >安堂</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=13"           >伊勢朝日</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=14"           >大阪阿部野橋</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=15"           >河内天美</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=16"           >志摩赤崎</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=17"           >大和朝倉</a></td></tr>
+									<tr><td id="i" class="index2" rowspan="7">い</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=18"           >伊賀神戸</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=19"           >伊賀上津</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=20"           >池の浦</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=21"           >池部</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=3016&type=1"  >生駒</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=23"           >生駒山上</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=24"           >石切</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=25"           >五十鈴川</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=26"           >伊勢朝日</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=27"           >伊勢石橋</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=28"           >伊勢川島</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=29"           >伊勢市</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=30"           >伊勢田</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=31"           >伊勢中川</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=32"           >伊勢中原</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=33"           >伊勢松本</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=34"           >伊勢若松</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=35"           >磯山</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=36"           >市尾</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=37"           >一分</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=38"           >今川</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=39"           >今里</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=40"           >磐城</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=41"           >石見</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=42"           >志摩磯部</a></td>
+										<td                    >&nbsp;</td>
+										<td                    >&nbsp;</td>
+										<td                    >&nbsp;</td></tr>
+									<tr><td id="u" class="index2" rowspan="2">う</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=43"           >鵜方</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=44"           >浮孔</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=45"           >宇治山田</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=47"           >畝傍御陵前</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=48"           >梅屋敷</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=49"           >大阪上本町</a></td>
+										<td                    >&nbsp;</td>
+										<td                    >&nbsp;</td></tr>
+									<tr><td id="e" class="index2">え</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=50"           >恵我ノ荘</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=51"           >江戸橋</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=52"           >河内永和</a></td>
+										<td class="top"        >&nbsp;</td></tr>
+									<tr><td rowspan="4" class="index2" id="o">お</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=54"           >王寺</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=55"           >大阿太</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=56"           >大久保</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=57"           >大阪阿部野橋</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=58"           >大阪上本町</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=59"           >大阪教育大前</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=60"           >大阪難波</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=61"           >大羽根園</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=62"           >大三</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=63"           >大輪田</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=64"           >岡寺</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=65"           >小倉</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=67"           >忍海</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=68"           >小俣</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=69"           >恩智</a></td>
+										<td                    >&nbsp;</td></tr>
+									<tr><td id="ka" class="index1" rowspan="9">か</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=70"           >伊賀神戸</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=71"           >伊勢川島</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=72"           >笠縫</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=73"           >賢島</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=74"           >橿原神宮西口</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=75"           >橿原神宮前</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=76"           >柏原</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=77"           >柏原南口</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=78"           >霞ヶ浦</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=79"           >霞ヶ丘</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=80"           >烏森</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=81"           >堅下</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=82"           >上鳥羽口</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=83"           >上之郷</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=84"           >上ノ太子</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=85"           >加茂</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=86"           >川合高岡</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=87"           >川越富洲原</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=88"           >河内天美</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=89"           >河内永和</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=90"           >河内国分</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=91"           >河内小阪</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=92"           >河内長野</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=93"           >河内花園</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=94"           >河内松原</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=95"           >河内山本</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=96"           >川西</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=97"           >川原町</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=98"           >学園前</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=99"           >学研北生駒</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=100"          >学研奈良登美ヶ丘</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=335"          >葛城登山口</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=336"          >葛城山上</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=101"          >近鉄蟹江</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=102"          >大和上市</a></td>
+										<td                    >&nbsp;</td></tr>
+									<tr><td id="ki" class="index2" rowspan="6">き</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=99"           >学研北生駒</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=103"          >桔梗が丘</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=104"          >喜志</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=105"          >北楠</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=106"          >北田辺</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=107"          >木津川台</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=108"          >久宝寺口</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=109"          >京都</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=101"          >近鉄蟹江</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=110"          >近鉄郡山</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=111"          >近鉄御所</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=112"          >近鉄下田</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=113"          >近鉄新庄</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=114"          >近鉄丹波橋</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=115"          >近鉄富田</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=116"          >近鉄長島</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=117"          >近鉄名古屋</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=118"          >近鉄奈良</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=119"          >近鉄日本橋</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=120"          >近鉄八田</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=121"          >近鉄宮津</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=122"          >近鉄八尾</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=123"          >近鉄弥富</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=124"          >近鉄四日市</a></td></tr>
+									<tr><td id="ku" class="index2" rowspan="3">く</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=125"          >櫛田</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=126"          >九条</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=127"          >楠</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=128"          >薬水</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=129"          >葛</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=130"          >沓掛</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=131"          >久津川</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=132"          >黒田</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=133"          >桑名</a></td>
+										<td                    >&nbsp;</td>
+										<td                    >&nbsp;</td>
+										<td                    >&nbsp;</td></tr>
+									<tr><td id="ko" class="index2" rowspan="4">こ</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=134"          >伊賀上津</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=90"           >河内国分</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=91"           >河内小阪</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=110"          >近鉄郡山</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=135"          >漕代</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=136"          >興戸</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=137"          >黄金</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=138"          >越部</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=139"          >河堀口</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=140"          >駒ヶ谷</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=141"          >狛田</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=142"          >米野</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=143"          >菰野</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=144"          >五位堂</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=145"          >五知</a></td>
+										<td                    >&nbsp;</td></tr>
+									<tr><td id="sa" class="index1" rowspan="2">さ</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=146"          >斎宮</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=147"          >榊原温泉口</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=148"          >桜</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=149"          >桜井</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=150"          >佐古木</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=151"          >佐味田川</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=152"          >三本松</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=153"          >大和西大寺</a></td></tr>
+									<tr><td id="si" class="index2" rowspan="6">し</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=154"          >近鉄下田</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=155"          >近鉄新庄</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=156"          >汐ノ宮</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=157"          >塩浜</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=158"          >信貴山口</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=159"          >信貴山下</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=160"          >志摩赤崎</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=161"          >志摩磯部</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=162"          >志摩神明</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=163"          >志摩横山</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=164"          >下市口</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=165"          >尺土</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=166"          >俊徳道</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=167"          >白木</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=168"          >白塚</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=169"          >白庭台</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=170"          >白子</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=171"          >新石切</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=172"          >新王寺</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=173"          >新大宮</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=174"          >新正</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=175"          >新田辺</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=176"          >新祝園</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=177"          >十条</a></td></tr>
+									<tr><td id="su" class="index2">す</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=178"          >鈴鹿市</a></td>
+										<td class="top"        >&nbsp;</td>
+										<td class="top"        >&nbsp;</td>
+										<td class="top"        >&nbsp;</td></tr>
+									<tr><td id="se" class="index2">せ</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=179"          >関屋</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=180"          >勢野北口</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=181"          >前栽</a></td>
+										<td class="top"        >&nbsp;</td></tr>
+									<tr><td id="ta" class="index1" rowspan="5">た</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=182"          >近鉄丹波橋</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=183"          >当麻寺</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=184"          >高田市</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=185"          >高田本山</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=186"          >高角</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=187"          >高の原</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=188"          >高見ノ里</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=189"          >高安</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=190"          >高安山</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=191"          >高鷲</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=192"          >滝谷不動</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=193"          >竹田</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=194"          >但馬</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=195"          >竜田川</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=196"          >田原本</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=197"          >大福</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=198"          >大和高田</a></td>
+										<td                    >&nbsp;</td>
+										<td                    >&nbsp;</td>
+										<td                    >&nbsp;</td></tr>
+									<tr><td id="ti" class="index2">ち</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=199"          >千里</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=200"          >千代崎</a></td>
+										<td class="top"        >&nbsp;</td>
+										<td class="top"        >&nbsp;</td></tr>
+									<tr><td id="tu" class="index2" rowspan="2">つ</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=17010&type=1" >津</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=202"          >築山</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=203"          >津新町</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=204"          >筒井</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=205"          >鼓ヶ浦</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=206"          >壺阪山</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=207"          >鶴橋</a></td>
+										<td                    >&nbsp;</td></tr>
+									<tr><td id="te" class="index2">て</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=208"          >寺田</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=209"          >天理</a></td>
+										<td class="top"        >&nbsp;</td>
+										<td class="top"        >&nbsp;</td></tr>
+									<tr><td rowspan="3" class="index2" id="to">と</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=211"          >近鉄富田</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=212"          >東寺</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=213"          >戸田</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=214"          >富野荘</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=215"          >鳥羽</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=217"          >富雄</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=218"          >富吉</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=219"          >豊津上野</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=220"          >鳥居前</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=221"          >富田林</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=222"          >富田林西口</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=223"          >道明寺</a></td></tr>
+									<tr><td id="na" class="index1" rowspan="4">な</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=224"          >伊勢中川</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=225"          >伊勢中原</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=226"          >大阪難波</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=227"          >河内長野</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=228"          >学研奈良登美ヶ丘</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=229"          >近鉄長島</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=230"          >近鉄名古屋</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=231"          >近鉄奈良</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=232"          >中川原</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=233"          >中菰野</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=234"          >中之郷</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=235"          >長瀬</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=236"          >長田</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=237"          >長太ノ浦</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=238"          >菜畑</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=239"          >名張</a></td></tr>
+									<tr><td id="ni" class="index2" rowspan="3">に</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=240"          >近鉄日本橋</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=241"          >二階堂</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=242"          >西青山</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=243"          >西田原本</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=244"          >西ノ京</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=246"          >二上</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=247"          >二上山</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=248"          >二上神社口</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=249"          >新ノ口</a></td>
+										<td                    >&nbsp;</td>
+										<td                    >&nbsp;</td>
+										<td                    >&nbsp;</td></tr>
+									<tr><td id="nu" class="index2">ぬ</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=250"          >額田</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=251"          >布忍</a></td>
+										<td class="top"        >&nbsp;</td>
+										<td class="top"        >&nbsp;</td></tr>
+									<tr><td id="ha" class="index1" rowspan="3">は</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=252"          >河内花園</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=253"          >近鉄八田</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=254"          >榛原</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=255"          >萩の台</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=256"          >箸尾</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=257"          >土師ノ里</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=258"          >長谷寺</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=259"          >服部川</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=260"          >針中野</a></td>
+										<td                    >&nbsp;</td>
+										<td                    >&nbsp;</td>
+										<td                    >&nbsp;</td></tr>
+									<tr><td id="hi" class="index2" rowspan="3">ひ</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=261"          >東青山</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=262"          >東生駒</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=263"          >東花園</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=264"          >東松阪</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=265"          >東山</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=266"          >久居</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=268"          >瓢箪山</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=269"          >枚岡</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=270"          >平田町</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=271"          >平端</a></td>
+										<td                    >&nbsp;</td>
+										<td                    >&nbsp;</td></tr>
+									<tr><td id="hu" class="index2" rowspan="2">ふ</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=272"          >ファミリー公園前</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=273"          >福神</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=274"          >伏見</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=275"          >伏屋</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=276"          >藤井寺</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=277"          >布施</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=278"          >船津</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=279"          >古市</a></td></tr>
+									<tr><td id="he" class="index2">へ</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=280"          >平城</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=281"          >平群</a></td>
+										<td class="top"        >&nbsp;</td>
+										<td class="top"        >&nbsp;</td></tr>
+									<tr><td id="ho" class="index2">ほ</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=282"          >宝山寺</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=283"          >法善寺</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=284"          >坊城</a></td>
+										<td class="top"        >&nbsp;</td></tr>
+									<tr><td id="ma" class="index1" rowspan="2">ま</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=285"          >伊勢松本</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=286"          >河内松原</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=287"          >益生</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=288"          >真菅</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=289"          >松尾</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=290"          >松ヶ崎</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=291"          >松阪</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=292"          >松塚</a></td></tr>
+									<tr><td rowspan="3" class="index2" id="mi">み</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=293"          >近鉄宮津</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=294"          >箕田</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=295"          >三日市</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=296"          >弥刀</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=297"          >南生駒</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=298"          >南が丘</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=300"          >美旗</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=301"          >耳成</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=302"          >三山木</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=303"          >宮町</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=304"          >海山道</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=305"          >明星</a></td></tr>
+									<tr><td id="mu" class="index2">む</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=306"          >向島</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=307"          >六田</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=308"          >室生口大野</a></td>
+										<td class="top"        >&nbsp;</td></tr>
+									<tr><td id="mo" class="index2">も</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=309"          >元山上口</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=310"          >桃園</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=311"          >桃山御陵前</a></td>
+										<td class="top"        >&nbsp;</td></tr>
+									<tr><td id="ya" class="index1" rowspan="4">や</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=95"           >河内山本</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=122"          >近鉄八尾</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=123"          >近鉄弥富</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=03008&type=1" >八戸ノ里</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=316"          >八木西口</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=317"          >矢田</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=25006&type=1" >柳</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=319"          >山田川</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=320"          >大和朝倉</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=321"          >大和上市</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=322"          >大和西大寺</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=323"          >大和高田</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=324"          >大和八木</a></td>
+										<td                    >&nbsp;</td>
+										<td                    >&nbsp;</td>
+										<td                    >&nbsp;</td></tr>
+									<tr><td id="yu" class="index2" >ゆ</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=325"          >結崎</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=326"          >湯の山温泉</a></td>
+										<td class="top"        >&nbsp;</td>
+										<td class="top"        >&nbsp;</td></tr>
+									<tr><td id="yo" class="index2" rowspan="2">よ</td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=327"          >近鉄四日市</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=328"          >志摩横山</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=329"          >吉田</a></td>
+										<td class="top"        ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=330"          >吉野</a></td></tr>
+									<tr><td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=331"          >吉野口</a></td>
+										<td                    ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=332"          >吉野神宮</a></td>
+										<td                    >&nbsp;</td>
+										<td                    >&nbsp;</td></tr>
+									<tr><td id="wa" class="index1" >わ</td>
+										<td class="top_bottom" ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=333"          >伊勢若松</a></td>
+										<td class="top_bottom" ><a href="./tetsudo_info/zenekijikoku_info.html?pekiname=334"          >若江岩田</a></td>
+										<td class="top_bottom" >&nbsp;</td>
+										<td class="top_bottom" >&nbsp;</td></tr>
+								</table>
+							</dd><dd class="bottom">&nbsp;</dd>
+						</dl>
+						<div class="link_top"><a href="#top">↑このページの上に戻る</a><br><a href="./index.html">←近鉄電車ご利用案内へ</a></div>
+					</div>
+				</div>
+
+<!--side frame-->
+
+
+			<script type="text/javascript">
+				<!--
+					function setMenu_pre(){
+						$("#side_t1").css( "background-position","0 0px");
+						$("#side_t5").css( "background-position","0 0px");
+						$("#side_t7").css( "background-position","0 0px");
+						$("#side_t8").css( "background-position","0 0px");
+						$("#side_t9").css( "background-position","0 0px");
+						$("#side_t11").css("background-position","0 0px");
+						$("#side_t13").css("background-position","0 0px");
+						$("#train_menu ul:eq(0)").hide();
+						$("#train_menu ul:eq(1)").hide();
+						$("#train_menu ul:eq(2)").hide();
+						$("#train_menu ul:eq(3)").hide();
+						$("#train_menu ul:eq(4)").hide();
+						$("#train_menu ul:eq(5)").hide();
+					};
+
+					function setMenu(idx){
+
+		
+
+						if ( idx == 0){
+							setMenu_pre();
+						}else if ( idx == 1 ){
+							setMenu_pre();
+							$("#side_t1").css( "background-position","0 -76px");
+							$("#train_menu ul:eq(0)").show();
+						}else if ( idx == 5 ){
+							setMenu_pre();
+							$("#side_t5").css( "background-position","0 -76px");
+							$("#train_menu ul:eq(1)").show();
+						}else if ( idx == 7 ){
+							setMenu_pre();
+							$("#side_t7").css( "background-position","0 -76px");
+							$("#train_menu ul:eq(2)").show();
+						}else if ( idx == 8 ){
+							setMenu_pre();
+							$("#side_t8").css( "background-position","0 -76px");
+							$("#train_menu ul:eq(3)").show();
+						}else if ( idx == 9 ){
+							setMenu_pre();
+							$("#side_t9").css( "background-position","0 -76px");
+							$("#train_menu ul:eq(5)").show();
+						}else if ( idx == 11 ){
+							setMenu_pre();
+							$("#side_t11").css("background-position","0 -76px");
+							$("#train_menu ul:eq(6)").show();
+						}else if ( idx == 13 ){
+							setMenu_pre();
+							$("#side_t13").css("background-position","0 -76px");
+							$("#train_menu ul:eq(4)").show();
+						}
+					}
+
+					function initMenu(idx,bfirst){
+						var val = idx;
+						var menuid = $.cookie("fkSideMenu");
+
+						if ( idx == 0 ){
+							if ( menuid == null ){ menuid = 0; }
+							setMenu(menuid);
+						} else {
+							if ( menuid == idx ){
+								if (!bfirst){
+									val = 0;
+								}
+							}
+							setMenu(val);
+							$.cookie("TetsudoSideMenu", val,{path:"/",expires:7});
+						}
+					}
+
+					$(document).ready(function() {
+						$("#side_t1").click( function (){ initMenu( 1,false); });
+						$("#side_t5").click(     function() { initMenu( 5,false); });
+						$("#side_t7").click(     function() { initMenu( 7,false); });
+						$("#side_t8").click(     function() { initMenu( 8,false); });
+						$("#side_t9").click(     function() { initMenu( 9,false); });
+						$("#side_t11").click(    function() { initMenu(11,false); });
+						$("#side_t13").click(    function() { initMenu(13,false); });
+
+		initMenu(0,true);
+
+					});
+
+					function setSiteImg(idx){
+						if ( idx == 1 ){idx = 0;}
+						else{           idx = 1;}
+
+						var imgs = new Array( "../common/image/side_menu_1b.png", "../common/image/side_menu_1c.png");
+						var oimg = document.getElementById("side_t1b_img");
+						oimg.src = imgs[idx];
+
+					}
+
+				// -->
+			</script>
+		
+			<div id="side_frame">
+				<!--dyer search-->
+				<ul id="train_menu">
+					<li id="m1">
+
+						<div id="side_t1"><a>ダイヤ案内</a></div>
+
+						<ul id="dyer">
+							<li><div class="block" >以下の検索方法をご選択ください。</div></li>
+						<!--20180930.httpsダイヤ案内対応のため以下1行コメントアウト。１行別リンク追加。-->
+						<!--<li id="line_search"   ><div class="block2"><a href="javascript:void(0)" onclick="javascript:showDyerWindow()"       >駅名指定検索</a></div></li>-->
+							<li id="line_search"   ><div class="block2"><a href="/gyoumu/dyer/"target="_blank">駅名指定検索</a></div></li>
+							<li id="line_search"   ><div class="block2"><a href="javascript:void(0)" onclick="javascript:goDyerSide(0,1)" >路線図から検索</a></div></li>
+							<li id="attention"     ><div class="block5"><img src="/common/image/ico_attention.gif" width="13" height="12" id="icoAt"><a href="/railway/Dia/dia_info.html" target="_blank">ご利用上の注意</a></div></li>
+						</ul>
+					</li>
+					<li id="side_t2"><a href="javascript:void(0)" onclick="javascript:goDyerSide(1,1)">時刻表</a></li>
+					<li id="side_t3"><a href="javascript:void(0)" onclick="javascript:goDyerSide(2,1)">駅掲出時刻表</a></li>
+					<li id="side_t4"><a href="javascript:void(0)" onclick="javascript:goDyerSide(3,1)">運賃・料金検索</a></li>
+					<li id="m2">
+						<div id="side_t5" class="side_t5">インターネット予約・発売サービス</div>
+						<ul id="dyer">
+							<li style="margin-bottom: -5px;">
+								<a href="javascript:void(0)" onclick="javascript:goDyerSide( 4, 1)"><img src="/common/image/tokkyu_btn.png" width="184" height="54" alt="特急券予約・発売"></a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" onclick="javascript:goDyerSide( 5, 1)"><img src="/common/image/teiki_btn.png" width="184" height="54" alt="定期券予約"></a>
+							</li>
+						</ul>
+					</li>
+
+					<!--tetsudo menu-->
+					<li id="side_t6"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(0)">運行情報</a></li>
+					<li id="m1">
+						<div id="side_t7" class="tetsudo_s1"><a>近鉄特急のご案内</a></div>
+						<ul id="dyer">
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage( 1,1)">近鉄特急のご案内</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage( 2,1)">名阪特急のご案内</a></div></li>
+						<!--<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage( 3,1)">特急券ののご案内</a></div></li>-->
+						<!--<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage( 4,1)">特急路線図</a></div></li>-->
+						<!--<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage( 5,1)">主な特急列車</a></div></li>-->
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage( 6,1)">車内販売サービス</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage( 7,1)">特急空席案内</a></div></li>
+						<!--<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage( 8,1)">インターネット予約・発売サービス</a></div></li>-->
+						</ul>
+					</li>
+					<li id="side_t10"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(23,1)">路線図・停車駅のご案内</a></li>
+					<li id="m1">
+						<div id="side_t8" class="tetsudo_s2">駅の情報</div>
+						<ul id="dyer">
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage( 9,1)">各駅のご案内</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(10,1)">お身体の不自由な方へ<br>（駅バリアフリー施設のご案内）</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(11,1)">主要駅構内図</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(12,1)">駅構内店舗の紹介</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(13,1)">駅営業所のご案内</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(16,1)">沿線レンタサイクル</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(33,1)">レンタル収納スペース</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(17,1)">駅にポスターを貼りませんか？</a></div></li>
+						</ul>
+					</li>
+					<li id="m1">
+						<div id="side_t13" class="tetsudo_s2">安全・快適な輸送を目指して</div>
+						<ul id="dyer">
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(37,1)">快適に電車・駅をご利用いただくために</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(38,1)">混雑率</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(39,1)">東海地震に関するお知らせ</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(40,1)">踏切事故防止について</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(18,1)">駅別乗降人員</a></div></li>
+						</ul>
+					</li>
+					<li id="m1">
+						<div id="side_t9" class="tetsudo_s3">きっぷの情報</div>
+						<ul id="dyer">
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(19,1)">きっぷのご案内</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(20,1)">お得なきっぷのご案内</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(22,1)">運賃・料金検索</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(21,1)">定期券のご案内</a></div></li>
+						</ul>
+					</li>
+					<li id="m1">
+						<div id="side_t11" class="tetsudo_s4">ICカードサービス </div>
+						<ul id="dyer">
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(24,1)">ICカードサービスのご案内</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(25,1)">ICガイドブック</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(26,1)">区間指定割引サービス</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(27,1)">KIPS + PiTaPa</a></div></li>
+							<li id="line_search"><div class="block2"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(32,1)">ICOCA、KIPS ICOCA</a></div></li>
+						</ul>
+					</li>
+					<li id="side_t12"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(28,1)">近鉄オリジナルグッズ</a></li>
+				</ul>
+				<div id="banner">
+						<ul>
+							<li id="banner_6"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(14,1)">お客様満足度向上への取り組み</a></li>
+							<li id="banner_7"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(30,1)">近鉄アプリ</a></li>
+							<li id="banner_8"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(15,1)">列車走行位置</a></li>
+							<li id="banner_1"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(29,1)">日帰りツアー</a></li>
+							<li id="banner_3"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(31,1)">しまかぜ残席照会</a></li>
+							<li id="banner_4"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(36,1)">KIPSクレジットカード</a></li>
+							<li id="banner_5"><a href="javascript:void(0)" onclick="javascript:goTetsuSidePage(34,1)">アド近鉄</a></li>
+						</ul>
+				</div>
+
+			</div>			</div>
+<!--footer-->
+		<div id="footer">
+			<div id="footer_item" class="clear">
+				<ul>
+					<li><a href="javascript:void(0)" onclick="javascript:goFooterPage(6,1)">コミュニティガイドライン | </a></li>
+					<li><a href="javascript:void(0)" onclick="javascript:goFooterPage(0,1)">個人情報の保護 | </a></li>
+					<li><a href="javascript:void(0)" onclick="javascript:goFooterPage(3,1)">特定個人情報の取扱い |</a><br /></li>
+					<li><a href="javascript:void(0)" onclick="javascript:goFooterPage(1,1)">サイトご利用案内 | </a></li>
+					<li><a href="javascript:void(0)" onclick="javascript:goFooterPage(2,1)">リンク集 | </a></li>
+					<li><a href="javascript:void(0)" onclick="javascript:goFooterPage(5,1)">携帯サイト | </a></li>
+					<li><a href="javascript:void(0)" onclick="javascript:goFooterPage(4,1)">サイトマップ</a></li>
+				</ul>
+			</div>
+		</div>
+<script type="text/javascript">
+    (function() {
+     var da = document.createElement('script');
+     da.type = 'text/javascript'; da.async = true;
+     if ('https:' == document.location.protocol) {
+     da.src =  'https://rsv.dga.jp/s/kintetsu/search_tool_n3.js';
+     } else {
+     da.src =  'http://cache.dga.jp/s/kintetsu/search_tool_n3.js';
+     }
+     var sc  = document.getElementsByTagName('script')[0];
+     sc.parentNode.insertBefore(da, sc);
+     })();
+</script>
+		</div>
+	</div>
+<script>
+	$("#train_menu > li > div").click(function(){
+		if(false == $(this).next().is(':visible')) {$('#train_menu ul').slideUp(300);}
+		$(this).next().slideToggle(300);
+	});
+	$('#train_menu ul:eq(0)').hide();
+	$('#train_menu ul:eq(1)').hide();
+	$('#train_menu ul:eq(2)').hide();
+	$('#train_menu ul:eq(3)').hide();
+	$('#train_menu ul:eq(4)').hide();
+	$('#train_menu ul:eq(5)').hide();
+	$('#train_menu ul:eq(6)').hide();
+</script>
+</body>
+</html>
