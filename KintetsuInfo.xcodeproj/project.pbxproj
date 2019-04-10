@@ -37,6 +37,7 @@
 /* Begin PBXFileReference section */
 		21F6F40E5498EBD8AE2E6D01 /* Pods-KintetsuInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KintetsuInfo.release.xcconfig"; path = "Pods/Target Support Files/Pods-KintetsuInfo/Pods-KintetsuInfo.release.xcconfig"; sourceTree = "<group>"; };
 		EB872931CD13F2CDC025B6F6 /* Pods_KintetsuInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KintetsuInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F008DF72225DDBD100D7209D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F01AD2AB21723341001A7F39 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F01AD2AD217234AE001A7F39 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F02C21C2217C0EED0047510A /* SelectLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLineTableViewCell.swift; sourceTree = "<group>"; };
@@ -106,6 +107,7 @@
 		F07CC7262164FEA500A5935C = {
 			isa = PBXGroup;
 			children = (
+				F008DF72225DDBD100D7209D /* README.md */,
 				F07CC7312164FEA500A5935C /* KintetsuInfo */,
 				F07CC7302164FEA500A5935C /* Products */,
 				F01AD2AA21723341001A7F39 /* Frameworks */,
