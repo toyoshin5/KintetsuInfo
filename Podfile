@@ -6,6 +6,13 @@ target 'KintetsuInfo' do
   use_frameworks!
 pod 'RealmSwift'
 pod "KRProgressHUD" 
+pod 'AutoScrollLabel'
+pod 'Ji', '~> 5.0.0'
   # Pods for KintetsuInfo
 
+post_install do |installer|
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+  end
+end
 end

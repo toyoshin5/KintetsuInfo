@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,6 @@
 		F056E8EA217723A000C7165A /* memo.txt in Resources */ = {isa = PBXBuildFile; fileRef = F056E8E9217723A000C7165A /* memo.txt */; };
 		F05AEFE1218D8C5B005BCF89 /* SelectGradeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AEFE0218D8C5B005BCF89 /* SelectGradeViewController.swift */; };
 		F05AEFE3218D8C71005BCF89 /* SelectGradeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05AEFE2218D8C71005BCF89 /* SelectGradeTableViewCell.swift */; };
-		F070FBBA21761DAA005C5FAF /* Ji.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F070FBB921761DAA005C5FAF /* Ji.framework */; };
 		F077DB1121BFEB4E00CF2B92 /* GetTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F077DB1021BFEB4E00CF2B92 /* GetTimeViewController.swift */; };
 		F077DB1321C0F26200CF2B92 /* Shiroko.html in Resources */ = {isa = PBXBuildFile; fileRef = F077DB1221C0F26200CF2B92 /* Shiroko.html */; };
 		F07CC7332164FEA500A5935C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07CC7322164FEA500A5935C /* AppDelegate.swift */; };
@@ -28,7 +27,6 @@
 		F082572E21D09E1F006FEED1 /* Nagoya.html in Resources */ = {isa = PBXBuildFile; fileRef = F082572D21D09E1F006FEED1 /* Nagoya.html */; };
 		F082573021D0A925006FEED1 /* developNote.txt in Resources */ = {isa = PBXBuildFile; fileRef = F082572F21D0A925006FEED1 /* developNote.txt */; };
 		F082573A21D7A65F006FEED1 /* ShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F082573921D7A65F006FEED1 /* ShowTableViewCell.swift */; };
-		F082573E21D87A39006FEED1 /* CBAutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F082573C21D87A39006FEED1 /* CBAutoScrollLabel.m */; };
 		F0BA42B621BAB34300876FE3 /* Tsu.html in Resources */ = {isa = PBXBuildFile; fileRef = F0BA42B521BAB34300876FE3 /* Tsu.html */; };
 		F0EF39D1216F8ECC002775A5 /* StationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF39D0216F8ECC002775A5 /* StationsTableViewCell.swift */; };
 		F0EF39D3217034C8002775A5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EF39D2217034C8002775A5 /* MapViewController.swift */; };
@@ -61,8 +59,6 @@
 		F082572F21D0A925006FEED1 /* developNote.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = developNote.txt; sourceTree = "<group>"; };
 		F082573921D7A65F006FEED1 /* ShowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTableViewCell.swift; sourceTree = "<group>"; };
 		F082573B21D87A38006FEED1 /* KintetsuInfo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KintetsuInfo-Bridging-Header.h"; sourceTree = "<group>"; };
-		F082573C21D87A39006FEED1 /* CBAutoScrollLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBAutoScrollLabel.m; path = "../../../../Downloads/AutoScrollLabel-master/CBAutoScrollLabel/CBAutoScrollLabel.m"; sourceTree = "<group>"; };
-		F082573D21D87A39006FEED1 /* CBAutoScrollLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBAutoScrollLabel.h; path = "../../../../Downloads/AutoScrollLabel-master/CBAutoScrollLabel/CBAutoScrollLabel.h"; sourceTree = "<group>"; };
 		F0BA42B521BAB34300876FE3 /* Tsu.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Tsu.html; sourceTree = "<group>"; };
 		F0EF39D0216F8ECC002775A5 /* StationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsTableViewCell.swift; sourceTree = "<group>"; };
 		F0EF39D2217034C8002775A5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -74,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F070FBBA21761DAA005C5FAF /* Ji.framework in Frameworks */,
 				F01AD2AE217234AE001A7F39 /* CoreLocation.framework in Frameworks */,
 				F01AD2AC21723341001A7F39 /* MapKit.framework in Frameworks */,
 				852939278CB4814AC61E39D7 /* Pods_KintetsuInfo.framework in Frameworks */,
@@ -147,8 +142,6 @@
 				F077DB1221C0F26200CF2B92 /* Shiroko.html */,
 				F056E8E9217723A000C7165A /* memo.txt */,
 				F082572F21D0A925006FEED1 /* developNote.txt */,
-				F082573D21D87A39006FEED1 /* CBAutoScrollLabel.h */,
-				F082573C21D87A39006FEED1 /* CBAutoScrollLabel.m */,
 				F082573B21D87A38006FEED1 /* KintetsuInfo-Bridging-Header.h */,
 			);
 			path = KintetsuInfo;
@@ -258,26 +251,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-KintetsuInfo/Pods-KintetsuInfo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/KRActivityIndicatorView/KRActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/KRProgressHUD/KRProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-KintetsuInfo/Pods-KintetsuInfo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KRProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-KintetsuInfo/Pods-KintetsuInfo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KintetsuInfo/Pods-KintetsuInfo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KintetsuInfo/Pods-KintetsuInfo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F070FBBD21761DCB005C5FAF /* ShellScript */ = {
@@ -315,7 +297,6 @@
 				F05AEFE3218D8C71005BCF89 /* SelectGradeTableViewCell.swift in Sources */,
 				F05AEFE1218D8C5B005BCF89 /* SelectGradeViewController.swift in Sources */,
 				F0EF39D1216F8ECC002775A5 /* StationsTableViewCell.swift in Sources */,
-				F082573E21D87A39006FEED1 /* CBAutoScrollLabel.m in Sources */,
 				F0EF39D3217034C8002775A5 /* MapViewController.swift in Sources */,
 				F07CC745216CEABD00A5935C /* StationsTableViewController.swift in Sources */,
 			);
@@ -380,6 +361,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -401,6 +383,8 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Debug;
 		};
@@ -441,6 +425,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -455,6 +440,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

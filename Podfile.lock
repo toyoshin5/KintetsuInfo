@@ -1,30 +1,38 @@
 PODS:
-  - KRActivityIndicatorView (3.0.0)
-  - KRProgressHUD (3.4.0):
-    - KRActivityIndicatorView (= 3.0.0)
-  - Realm (3.12.0):
-    - Realm/Headers (= 3.12.0)
-  - Realm/Headers (3.12.0)
-  - RealmSwift (3.12.0):
-    - Realm (= 3.12.0)
+  - AutoScrollLabel (0.4.3)
+  - Ji (5.0.0)
+  - KRActivityIndicatorView (3.0.7)
+  - KRProgressHUD (3.4.7):
+    - KRActivityIndicatorView (= 3.0.7)
+  - Realm (10.25.1):
+    - Realm/Headers (= 10.25.1)
+  - Realm/Headers (10.25.1)
+  - RealmSwift (10.25.1):
+    - Realm (= 10.25.1)
 
 DEPENDENCIES:
+  - AutoScrollLabel
+  - Ji (~> 5.0.0)
   - KRProgressHUD
   - RealmSwift
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
+    - AutoScrollLabel
+    - Ji
     - KRActivityIndicatorView
     - KRProgressHUD
     - Realm
     - RealmSwift
 
 SPEC CHECKSUMS:
-  KRActivityIndicatorView: c414000730a6f4969eeb354bee4f2aebc89c2c2e
-  KRProgressHUD: 79c8703f82179fe34b3602f10b30726f887983fa
-  Realm: cdaef23c4ddb36ab1ddffed23f5a7f3332fc5585
-  RealmSwift: 5576324033f0aa5ef1e0a839a3da2281dff47a7f
+  AutoScrollLabel: bee53a1d4532569b49cbecaf9b80ca003bed3767
+  Ji: d795fed288fe78658b404c88946d753b17d8d7f4
+  KRActivityIndicatorView: ad69e89c4ce40c986cf580595be4829dcad0e35a
+  KRProgressHUD: a248f0bc6c9c2aed40a37b76e03ffecc7f85c887
+  Realm: 1a6e9b4f6983711655d8c0bcb6d2d29c3afbb1f3
+  RealmSwift: e72669550d27082aa4fad5d176f5076cfe806245
 
-PODFILE CHECKSUM: c1c238869ceaec34686c5bcc5d5ba467452483f5
+PODFILE CHECKSUM: 354d9a823a28fb368dd8e76ac04d5d001ccc644d
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.11.3
